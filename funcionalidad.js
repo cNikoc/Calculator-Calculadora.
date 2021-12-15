@@ -1,9 +1,38 @@
+"use strict";
+
+let on = document.querySelector(".on");
+let off = document.querySelector(".off");
+
+console.log("%cCALCULADORA APAGADA.","color:red;padding:10px;background:black;");
+
+function luces(){
+	let luz = document.getElementsByClassName("luzencendido")[0];
+		luz.className = luz.className.replace("luzencendido","luzon");
+	let on = document.getElementsByClassName("on")[0];
+		on.className = on.className.replace("on","no");
+	let off = document.getElementsByClassName("off")[0];
+		off.className = off.className.replace("off","foo");
+	let pant = document.getElementsByClassName("pant")[0];
+		pant.className = pant.className.replace("pant","pantalla");
+}
+
+on.addEventListener("click",function(){
+	iniciar();
+	luces();
+	console.log("%cCALCULADORA ENCENDIDA.","color:green;padding:10px;background:black;");
+});
+
+off.addEventListener("click",function(){
+	window.location.reload();
+});
+
+
 let parametroA;
 let parametroB;
 let operacion;
 
 function iniciar() {
-	let pantalla = document.querySelector(".pantalla");
+	let pantalla = document.querySelector(".pant");
 	const clear = document.querySelector(".clear");
 	const sumar = document.querySelector(".sumar");
 	const restar = document.querySelector(".restar");
@@ -133,6 +162,8 @@ function iniciar() {
 	pantalla.textContent = "";
 	};
 
+	let resultado = "";
+
 	function resolver() {
 		switch(operacion){
 			case "+" :
@@ -169,7 +200,5 @@ function iniciar() {
 };
 
 };
-
-iniciar();
 
 
